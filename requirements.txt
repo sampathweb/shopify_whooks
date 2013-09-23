@@ -1,0 +1,7 @@
+Flask
+Flask-SqlAlchemy
+Flask-Script
+six
+config
+Flask-Restful
+Flask-Migrate
