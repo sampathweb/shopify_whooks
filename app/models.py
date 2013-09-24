@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String
-from app import db
+from . import db
 
 class WH_Order(db.Model):
     __tablename__ = 'wh_orders'
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    json_body = Column(String(250))
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    json_body = db.Column(db.String(250))

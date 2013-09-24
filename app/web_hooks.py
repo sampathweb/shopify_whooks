@@ -2,7 +2,7 @@ from flask import request
 from flask.ext.restful import reqparse, abort, Api, Resource
 from flask.ext.restful import fields, marshal, marshal_with, Api
 from .models import WH_Order
-from app import db
+from . import db
 
 parser = reqparse.RequestParser()
 parser.add_argument('orders', type=str)
