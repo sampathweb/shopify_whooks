@@ -14,7 +14,7 @@ class OrderHook(Resource):
     def post(self):
         args = parser.parse_args()
         order = WH_Order()
-        order.json_body = request.form['orders']
+        order.json_body = request.get_json()
         db.session.add(order)
         db.session.commit()
         return None
