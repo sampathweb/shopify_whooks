@@ -1,4 +1,8 @@
-from app import app
+import sys
+from app import app as application
+
+# sys.path.insert(0, '/home/engineroom/webapps/shopify_whooks')
+# from shopify_whooks import app as application
 
 class WebFactionMiddleware(object):
     def __init__(self, app):
@@ -7,5 +11,4 @@ class WebFactionMiddleware(object):
         environ['SCRIPT_NAME'] = '/shopify/webhooks'
         return self.app(environ, start_response)
 
-app.wsgi_app = WebFactionMiddleware(app.wsgi_app)
-
+application.wsgi_app = WebFactionMiddleware(application.wsgi_app)
